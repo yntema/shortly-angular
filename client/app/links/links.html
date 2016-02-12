@@ -1,11 +1,11 @@
 <div id='container'>
   <!-- Your html here -->
   <img src='/redirect_icon.png'/>
-  <div class='info' ng-repeat='link in links'>
-    <div class='visits'><span class='count'>{{visits}}</span>Visits</div>
-    <div class='title'>{{title}}</div>
-    <div class='original'>{{url}}</div>
-    <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a>
+  <div class='info' ng-repeat='link in Links'>
+    <div class='visits'><span class='count'>{{link}}</span>Visits</div>
+    <div class='title'>{{link}}</div>
+    <!-- <div class='original'>{{link.url}}</div> -->
+    <!-- <a href='{{baseUrl}}/{{code}}'>{{baseUrl}}/{{code}}</a> -->
   </div>
 
 </div>
