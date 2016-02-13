@@ -13,20 +13,21 @@ angular.module('shortly.services', [])
     });
   };
 
-  var newLink = function (url) {
+  var createLink = function (url) {
     return $http({
       method: 'POST',
       url: '/api/links/',
       data: url
     })
     .then(function (resp) {
+      console.log('services.js response from createLink:', resp);
       // respond with 201
     });
   };
 
   return {
     getLinks: getLinks,
-    newLink: newLink
+    createLink: createLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
