@@ -2,34 +2,31 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
-  var getLinks = function () {
-    console.log('services.js getLinks fired');
+  var getAll = function () {
     return $http({
       method: 'GET',
-      url: '/api/links/'
+      url: '/api/links'
     })
     .then(function (links) {
-      console.log('service.js links return from get', links);
-      return links;
+      return links.data;
       // return all links
     });
   };
 
-  var createLink = function (url) {
+  var addOne = function (url) {
     return $http({
       method: 'POST',
-      url: '/api/links/',
+      url: '/api/links',
       data: url
     })
     .then(function (createdLink) {
-      console.log('services.js response from createLink:', createdLink);
       return createdLink.data;
     });
   };
 
   return {
-    getLinks: getLinks,
-    createLink: createLink
+    getAll: getAll,
+    addOne: addOne
   };
 })
 .factory('Auth', function ($http, $location, $window) {

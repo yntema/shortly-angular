@@ -5,10 +5,10 @@ angular.module('shortly.links', [])
   $scope.links;
 
   $scope.getLinks = function () {
-    Links.getLinks()
+    Links.getAll()
     .then(function (allLinks) {
       console.log('links.js - all links fetched: ', allLinks);
-      $scope.links = allLinks.data;
+      $scope.links = allLinks;
     });
   };
 
