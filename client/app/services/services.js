@@ -8,7 +8,8 @@ angular.module('shortly.services', [])
       url: '/api/links/'
     })
     .then(function (links) {
-      res.json(links);
+      console.log('service.js links return from get', links);
+      return links;
       // return all links
     });
   };
@@ -19,9 +20,9 @@ angular.module('shortly.services', [])
       url: '/api/links/',
       data: url
     })
-    .then(function (resp) {
-      console.log('services.js response from createLink:', resp);
-      // respond with 201
+    .then(function (createdLink) {
+      console.log('services.js response from createLink:', createdLink);
+      return createdLink.data;
     });
   };
 
