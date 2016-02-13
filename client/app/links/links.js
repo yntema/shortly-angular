@@ -11,6 +11,6 @@ angular.module('shortly.links', [])
     });
   };
 
-  $scope.data.links = fetchLinks;
+  $scope.data.links = Links.getAll();
 
 });

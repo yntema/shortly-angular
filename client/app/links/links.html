@@ -10,7 +10,7 @@
   <div>
   	<input type='text' ng-model='searchFilter'>
   </div>
-  <div class='link' ng-repeat="link in data.links | orderBy:'-visits' | filter:searchFilter">
+  <div class='link' ng-repeat="link in data.links | orderBy:'-visits' | filter:searchFilter" ui-view>
     <img src='../assets/redirect_icon.png'/>
     <div class='info'>
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
