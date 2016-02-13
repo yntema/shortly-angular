@@ -7,7 +7,7 @@ angular.module('shortly.links', [])
   $scope.getLinks = function () {
     Links.getLinks()
     .then(function (allLinks) {
-    	console.log('links.js - all links fetched: ', allLinks);
+      console.log('links.js - all links fetched: ', allLinks);
       $scope.links = allLinks;
     });
   };
