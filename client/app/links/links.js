@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, fetchLinks) {
   // Your code here
   $scope.data = {};
 
@@ -11,6 +11,6 @@ angular.module('shortly.links', [])
     });
   };
 
-  $scope.getLinks();
+  $scope.data.links = fetchLinks;
 
 });
