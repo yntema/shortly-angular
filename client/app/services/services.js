@@ -20,7 +20,12 @@ angular.module('shortly.services', [])
       data: url
     })
     .then(function (resp) {
+      console.log('respons services.js', resp);
       return resp;
+    })
+    .catch(function (err) {
+      console.log('error services.js', err);
+      return err.data.error;
     });
   };
 

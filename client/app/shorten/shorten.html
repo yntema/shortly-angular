@@ -3,17 +3,16 @@
     <ul>
       <li><a href='/#/links' class='index'>All Links</a></li>
       <li><a href='/#/shorten' class='create'>Shorten</a></li>
-      <li><a href='/#/signout' class='logout' >Logout</a></li>
+      <li><a href='/#/signout' class='logout' ng-click='signout'>Logout</a></li>
     </ul>
   </div>
-<!-- Your code here -->
   <div class="creator">
     <form ng-submit='addLink()'>
       <input class='text' type='text' name='url' ng-model='link.url'>
       <button>Shorten Url</button>
     </form>
     <img class='spinner' src='../assets/spiffygif_46x46.gif'>
-    <div class='message'></div>
+    <div class='message'> {{ error }} </div>
   </div>
 </div>
 
