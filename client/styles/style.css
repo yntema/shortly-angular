@@ -132,7 +132,7 @@ input[type=url]:focus {
 
 .creator form {
   float: left;
-  height: 80px;
+  height: 800px;
 }
 
 .creator img.spinner {
