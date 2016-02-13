@@ -20,6 +20,7 @@ angular.module('shortly.services', [])
       data: url
     })
     .then(function (createdLink) {
+      console.log('----------------------', createdLink);
       return createdLink.data;
     });
   };
