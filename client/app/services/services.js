@@ -19,9 +19,8 @@ angular.module('shortly.services', [])
       url: '/api/links',
       data: url
     })
-    .then(function (createdLink) {
-      console.log('----------------------', createdLink);
-      return createdLink.data;
+    .then(function (resp) {
+      return resp;
     });
   };
 
