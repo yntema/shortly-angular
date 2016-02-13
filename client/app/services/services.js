@@ -65,12 +65,12 @@ angular.module('shortly.services', [])
   };
 
   var isAuth = function () {
+    console.log('locStore: ', $window.localStorage.getItem('com.shortly'));
     return !!$window.localStorage.getItem('com.shortly');
   };
 
   var signout = function () {
     $window.localStorage.removeItem('com.shortly');
-    console.log('removed com.shortly?: ', locationStorage.getItem('com.shortly'));
     $location.path('/signin');
   };
 
