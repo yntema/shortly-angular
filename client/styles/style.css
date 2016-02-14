@@ -1,7 +1,7 @@
 body {
   margin: 0;
   margin-top: 10px;
-  font-family: arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
@@ -11,46 +11,70 @@ a {
 }
 
 h1 {
-  font-style: italic;
+  text-align: center;
   margin-bottom: 10px;
 }
 
+.header {
+  background-color: #2c3e50;
+  color: #fff;
+  height: 80px;
+  padding: 20px;
+  font-size: 2em;
+  display: block;
+}
+
+.header h1 {
+  text-align: center;
+  margin: auto;
+}
+
 .navigation {
-  width: 100%;
-  height: 40px;
-  background-color: #eee;
+  /*background-color: #eee;*/
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 1;
 }
 
 .navigation ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
+
 }
 
 .navigation li {
   float: left;
+  position: relative;
+  display: block;
+  font-size: 30px;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+  width: 100%;
 }
 
 .navigation li a {
-  width: 100px;
-  height: 20px;
-  line-height: 20px;
-  padding: 10px;
   display: block;
-  text-align: center;
+  padding: 20px 30px;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.navigation li a:hover {
+.navigation li:hover {
   background-color: #ddd;
 }
 
-.navigation li a.selected {
+.navigation li.selected {
   background-color: #ccc;
 }
 
 #container {
   clear: both;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .link {
@@ -98,11 +122,11 @@ form {
 }
 
 input {
-  width: 360px;
+  width: 100%;
   display: block;
-  font-size: 13px;
-  padding: 5px;
-  margin-bottom: 5px;
+  font-size: 20px;
+  padding: 30px;
+  margin: 10px;
 }
 
 input[type=url] {
@@ -111,6 +135,16 @@ input[type=url] {
 
 input[type=url]:focus {
   outline: none;
+}
+
+.sidebar {
+  height: 80vh;
+}
+
+.filter {
+  width: 50%;
+  padding: 10px;
+  font-size: 2em;
 }
 
 
@@ -126,23 +160,41 @@ input[type=url]:focus {
   margin: 0 10px;
 }
 
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
 .creator {
-  height: 50px;
+  border: 1px solid #95a5a6;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 50px;
+  z-index: 100;
 }
 
 .creator form {
   float: left;
-  height: 800px;
 }
 
-.creator img.spinner {
+.md-block {
+  font-size: 40px;
+  width: 400px;
+  margin: 50px;
+}
+
+
+img.spinner {
   height: 46px;
   margin-bottom: 5px;
   padding: 10px;
   display: none;
 }
 
-/*.creator .message {
+
+.creator .message {
   clear: both;
 }
-*/
+

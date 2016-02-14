@@ -1,18 +1,34 @@
-<div id='container'>
-  <div class='navigation'>
-    <ul>
-      <li><a href='/#/links' class='index'>All Links</a></li>
-      <li><a href='/#/shorten' class='create selected'>Shorten</a></li>
-      <li><a href='/#/signout' class='logout' ng-click='signout'>Logout</a></li>
-    </ul>
-  </div>
-  <div class="creator">
-    <form ng-submit='addLink()'>
-      <input class='text' type='text' name='url' ng-model='link.url'>
-      <md-button class='md-fab md-primary'></md-button>
-    </form>
-    <img class='spinner' src='../assets/spiffygif_46x46.gif'>
-    <div class='message'> {{ error }} </div>
+<div id='container' flex layout="row">
+  <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1 sidebar">
+    <md-content>
+    <div class='navigation'>
+      <ul>
+        <li><a href='/#/links' class='index'>All Links</a></li>
+        <li class="selected"><a href='/#/shorten' class='create selected'>Shorten</a></li>
+        <li><a href='/#/signout' class='logout' ng-click='signout'>Logout</a></li>
+      </ul>
+    </div>
+    </md-content>
+  </md-sidenav>
+    <!-- Your html here -->
+  <div class='aligner' layout='column' flex>
+    <div class="creator">
+      <div layout-gt-sm="row" layout-align="center">
+        <form name="shortlyForm" ng-submit='addLink()' novalidate>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Enter a URL</label>
+            <input type='url' name='link' ng-model='link.url' ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}">
+            <md-button type="submit" class='md-button md-primary'>Submit</md-button>
+          </md-input-container>
+        </form>
+      </div>
+      <div ng-if='shortlyForm.link.$error.required && shortlyForm.$dirty' class="message">
+        <h3>Url required</h2>
+      </div>
+      <div ng-show='shortlyForm.link.$error.url && shortlyForm.$dirty' class="message">
+        <h3>Not a valid url</h2>
+      </div>
+    </div>
   </div>
 </div>
 

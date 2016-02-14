@@ -1,23 +1,26 @@
-<div id='container'>
-  <div class='navigation' ng-controller='AuthController'>
-    <ul>
-      <li><a href='/#/links' class='index selected'>All Links</a></li>
-      <li><a href='/#/shorten' class='create'>Shorten</a></li>
-      <li><a href='/#/signout' class='logout' ng-click='signout()'>Logout</a></li>
-    </ul>
-  </div>
-  <!-- Your html here -->
-  <div>
-  	<input type='text' ng-model='searchFilter'>
-  </div>
-  <div class='link' ng-repeat="link in data.links | orderBy:'-visits' | filter:searchFilter" ui-view>
-    <img src='../assets/redirect_icon.png'/>
-    <div class='info'>
-      <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
-      <div class='title'>{{link.title}}</div>
-      <div class='original'>{{link.url}}</div>
-      <a href='{{link.base_rl}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+<div id='container' flex layout="row">
+  <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1 sidebar">
+    <div class='navigation' ng-controller='AuthController'>
+      <ul>
+        <li class="selected"><a href='/#/links' class='index selected'>All Links</a></li>
+        <li><a href='/#/shorten' class='create'>Shorten</a></li>
+        <li><a href='/#/signout' class='logout' ng-click='signout()'>Logout</a></li>
+      </ul>
+    </div>
+  </md-sidenav>
+    <!-- Your html here -->
+  <div layout='column' flex>
+    <div>
+      <input type='text' class="filter" placeholder="Filter links" ng-model='searchFilter'>
+    </div>
+    <div class='link' ng-repeat="link in data.links | orderBy:'-visits' | filter:searchFilter">
+      <img src='../assets/redirect_icon.png'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a href='{{link.base_url}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+      </div>
     </div>
   </div>
-
 </div>

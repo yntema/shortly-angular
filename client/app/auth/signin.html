@@ -1,9 +1,22 @@
-<div id='signin' ui-view>
-  <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
-  </form>
-  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+
+<div class='aligner' layout='column' flex>
+  <div class="creator">
+		<div id='signin'>
+		  <h1>signin</h1>
+		  <hr>
+			  <form name="signinForm" ng-submit='signin()'>
+	        <md-input-container class="md-block" flex-gt-sm>
+		        <label>Username</label>
+				    <input type='text'ng-model='user.username'>
+	        </md-input-container>
+	        <md-input-container class="md-block" flex-gt-sm>
+		        <label>Password</label>
+				    <input type="password" ng-model='user.password'>
+	        </md-input-container>
+			    <md-button type="submit" class='md-button md-primary'>signin</md-button>
+			  </form>
+		  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+		</div>
+  </div>
 </div>
+
