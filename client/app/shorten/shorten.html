@@ -11,14 +11,23 @@
     </md-content>
   </md-sidenav>
     <!-- Your html here -->
-  <div layout='column' flex>
+  <div class='aligner' layout='column' flex>
     <div class="creator">
-      <form ng-submit='addLink()'>
-        <input class='text' type='text' name='url' ng-model='link.url'>
-        <md-button class='md-fab md-primary'></md-button>
-      </form>
-      <img class='spinner' src='../assets/spiffygif_46x46.gif'>
-      <div class='message'> {{ error }} </div>
+      <div layout-gt-sm="row" layout-align="center">
+        <form name="shortlyForm" ng-submit='addLink()' novalidate>
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Enter a URL</label>
+            <input type='url' name='link' ng-model='link.url' ng-class="{'error': shortlyForm.$invalid && shortlyForm.$dirty}">
+            <md-button type="submit" class='md-button md-primary'>Submit</md-button>
+          </md-input-container>
+        </form>
+      </div>
+      <div ng-if='shortlyForm.link.$error.required && shortlyForm.$dirty' class="message">
+        <h3>Url required</h2>
+      </div>
+      <div ng-show='shortlyForm.link.$error.url && shortlyForm.$dirty' class="message">
+        <h3>Not a valid url</h2>
+      </div>
     </div>
   </div>
 </div>
