@@ -1,7 +1,7 @@
 body {
   margin: 0;
   margin-top: 10px;
-  font-family: arial, sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
@@ -11,13 +11,21 @@ a {
 }
 
 h1 {
-  font-style: italic;
+  text-align: center;
   margin-bottom: 10px;
+}
+
+.header {
+  background-color: #3498db;
+  color: #fff;
+  height: 100px;
+  padding: 20px;
+  font-size: 2em;
 }
 
 .navigation {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: #eee;
 }
 
@@ -25,15 +33,16 @@ h1 {
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 100%;
 }
 
 .navigation li {
   float: left;
+  font-size: 30px;
 }
 
 .navigation li a {
-  width: 100px;
-  height: 20px;
+  /*width: 100px;*/
   line-height: 20px;
   padding: 10px;
   display: block;
@@ -50,7 +59,7 @@ h1 {
 
 #container {
   clear: both;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .link {
@@ -113,6 +122,16 @@ input[type=url]:focus {
   outline: none;
 }
 
+.sidebar {
+  height: 80vh;
+}
+
+.filter {
+  width: 100%;
+  padding: 10px;
+  font-size: 2em;
+}
+
 
 .error {
   border: red solid 4px;
@@ -141,6 +160,7 @@ input[type=url]:focus {
   padding: 10px;
   display: none;
 }
+
 
 /*.creator .message {
   clear: both;
