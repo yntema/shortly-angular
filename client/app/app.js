@@ -21,7 +21,7 @@ angular.module('shortly', [
       controller: 'LinksController',
       authenticate: true,
       resolve: {
-        fetchLinks: function(Links) {
+        fetchLinks: function (Links) {
           return Links.getAll();
         }
       }

@@ -1,15 +1,13 @@
 
 <div id='container' flex layout="row">
   <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1 sidebar">
-    <md-content>
     <div class='navigation' ng-controller='AuthController'>
       <ul>
-        <li><a href='/#/links' class='index selected'>All Links</a></li>
+        <li class="selected"><a href='/#/links' class='index selected'>All Links</a></li>
         <li><a href='/#/shorten' class='create'>Shorten</a></li>
         <li><a href='/#/signout' class='logout' ng-click='signout()'>Logout</a></li>
       </ul>
     </div>
-    </md-content>
   </md-sidenav>
     <!-- Your html here -->
   <div layout='column' flex>
