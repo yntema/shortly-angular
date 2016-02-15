@@ -11,8 +11,8 @@ module.exports = function (app, express) {
 
   // authentication middleware used to decode token and made available on the request
   app.use('/api/links', helpers.decode);
-  app.get('/api/links/', linkController.allLinks);
-  app.post('/api/links/', linkController.newLink);
+  app.get('/api/links', linkController.allLinks);
+  app.post('/api/links', linkController.newLink);
 
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
